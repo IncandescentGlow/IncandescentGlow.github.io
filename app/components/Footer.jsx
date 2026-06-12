@@ -84,6 +84,7 @@ export default function Footer() {
 							href={link.url}
 							target="_blank"
 							rel="noopener noreferrer"
+                            className="hover:scale-[1.05] transition-all duration-300"
 						>{link.icon}</a>
                         ))}
                     </div>
