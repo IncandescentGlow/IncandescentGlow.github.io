@@ -65,10 +65,7 @@ const aboutContent = [
 		title: "Languages",
 		content: (
 			<>
-				I am a native <span className="highlight">Indonesian</span> and
-				am also fluent in <span className="highlight">English</span>,
-				including skills in reading, writing, and speaking. I have
-				strong professional communication skills in both.
+				I am a native <span className="highlight">Indonesian</span> speaker and fluent in <span className="highlight">English</span>.
 			</>
 		),
 	},
