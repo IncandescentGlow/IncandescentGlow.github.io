@@ -2,6 +2,11 @@ import { Bricolage_Grotesque, DM_Sans, Imbue } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Metadata } from 'next';
+
+export const metadata = {
+  title: "Lisa Kurniadi",
+};
 
 const bricolage_grotesque = Bricolage_Grotesque({
 	subsets: ["latin"],
