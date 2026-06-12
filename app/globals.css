@@ -1,26 +1,95 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=DM+Sans&display=swap"); */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+	--font-heading: "Bricolage Grotesque", sans-serif;
+	--font-sans: "DM Sans", sans-serif;
+	--font-serif: "Imbue", serif;
+	--color-primary: #441828;
+	--color-vanilla: #fcf8f1;
+	--color-strawberry: #e54b4b;
+	--color-hayley: #ff6105;
+    --color-hayley-500: #FFA648;
+	--color-pink: #f9dbff;
+	--color-gold: #ffd200;
+	--color-ttpd: #171717;
+	--color-button: #f9dbff;
+
+	--animate-wiggle: wiggle 1s ease-in-out infinite;
+	@keyframes wiggle {
+		0%,
+		100% {
+			transform: rotate(-3deg);
+		}
+		50% {
+			transform: rotate(3deg);
+		}
+	}
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+	/* @apply font-sans; */
+	font-family: var(--font-sans);
+}
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+	@apply select-none;
+}
+h1,
+h2 {
+	@apply font-heading;
+}
+h2 {
+	@apply text-3xl md:text-4xl;
+}
+h3 {
+	@apply font-serif;
+}
+p {
+	@apply text-base leading-relaxed opacity-90;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.rounded-btn {
+	@apply border rounded-full min-w-32 px-3 py-2 text-center
+    self-center transition-all duration-300 ease-out;
+}
+.border-decor {
+    @apply border-primary/20 bg-primary/5
+    text-primary hover:bg-primary/10;
+}
+.border-decor-dark {
+    @apply text-vanilla bg-strawberry/90 border border-strawberry/30 
+    rounded-full text-sm font-bold hover:bg-strawberry/70 hover:text-vanilla 
+    hover:border-strawberry/10 active:bg-strawberry/60
+}
+/* .rounded-btn2 {
+	@apply border rounded-full min-w-32 px-3 py-2 text-center
+    self-center transition-all duration-300 ease-out text-vanilla
+  bg-strawberry/90 border-strawberry/30 
+  hover:bg-strawberry/70 hover:text-vanilla
+  hover:border-strawberry/10 active:bg-strawberry/60;
+} */
+/* button {
+  @apply border rounded-full border-primary 
+            min-w-32 px-4.5 py-2.75 text-center;
+} */
+.outlines {
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: #000;
+	paint-order: stroke fill;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.clickable-text {
+	@apply font-normal underline underline-offset-4 text-hayley hover:text-hayley/80 transition-colors;
+}
+
+.highlight {
+    @apply text-strawberry font-semibold;
 }
